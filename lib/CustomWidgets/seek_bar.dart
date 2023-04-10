@@ -100,13 +100,16 @@ class _SeekBarState extends State<SeekBar> {
                     final String speedValue =
                         '${snapshot.data?.toStringAsFixed(1) ?? 1.0}x';
                     return GestureDetector(
-                      child: Text(
-                        speedValue,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: speedValue == '1.0x'
-                              ? Theme.of(context).disabledColor
-                              : null,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 20.0),
+                        child: Text(
+                          speedValue,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: speedValue == '1.0x'
+                                ? Theme.of(context).disabledColor
+                                : null,
+                          ),
                         ),
                       ),
                       onTap: () {
